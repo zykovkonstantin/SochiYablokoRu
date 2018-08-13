@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
+
+/* Общие правила и классы */
+
+html { height: 100%; }
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 ul {
@@ -22,6 +30,8 @@ ul {
     display: table;
     clear: both;
 }
+
+/* Все что связанно с header */
 
 .main-menu-container  {
     color: #fff;
@@ -87,6 +97,57 @@ ul {
     font-size: 0.7em;
 }
 
+/*Кнопка меню */
+
+.nav-toggle {
+    display: none;
+    position: relative;
+    float: right;
+    width: 50px;
+    margin: 10px;
+   /* background: #EF5A42;*/
+    cursor: pointer;
+}
+.nav-toggle span {
+    display: block;
+    position: absolute;
+    top: 19px;
+    left: 8px;
+    right: 8px;
+    height: 3px;
+    background: white;
+}
+.nav-toggle span:before, .nav-toggle span:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+}
+.nav-toggle span:before {
+    top: -10px;
+}
+.nav-toggle span:after {
+    bottom: -10px;
+}
+
+/* Все что связанно в footer */
+
+footer {
+    background: rgba(40,40,41,100);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+footer img{
+    width: 240px;
+    padding: 10px;
+}
+
 .socials {
     padding: 10px 0 10px;
 }
@@ -106,18 +167,10 @@ ul {
 .socials a.fb:before {content: '\f09a';}
 .socials a.yt:before {content: '\f167';}
 
-footer {
-    background: rgba(40,40,41,100);
-    position:relative;
-    bottom:0;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-}
+/* Все что связанно с content */
 
-footer img{
-    width: 240px;
-    padding: 10px;
+.content {
+    flex: 1 0 auto;
 }
 
 .welcome {
@@ -185,9 +238,15 @@ footer img{
     height: 100%;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     overflow: hidden;
+
+    transition-property: color;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.3s;
 }
 
 .last-news-block a:hover {
+    color: black;
     position: relative;
     bottom: 5px;
     right: 5px;
@@ -200,3 +259,36 @@ footer img{
     width: 100%;
     height: 120px;
 }
+
+/* Адаптируем дизайн под разрешение 480px */
+@media (max-width: 480px) {
+
+.main-menu {
+    display: none;
+}
+
+.nav-toggle {
+    display: inline-block;
+}
+
+.last-news-block li{
+    display: inline-block;
+    width: 100%;
+    height: 250px;
+    margin: 10px;
+}
+
+.last-news-block p {
+    text-transform: uppercase;
+    color: #797979;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right:unset;
+    margin: 0;
+}
+
+}
+
+
+
