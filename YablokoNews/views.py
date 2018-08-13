@@ -15,5 +15,5 @@ def news(request):
 
 
 def news_detail(request, pk):
-    new = get_object_or_404(News, pk=pk)
-    return render(request, 'news_detail.html', {'new': new})
+    one_news = get_object_or_404(News, pk=pk)
+    return render(request, 'news_detail.html', {'one_news': one_news})
