@@ -262,9 +262,9 @@ footer img{
 /* Адаптируем дизайн под разрешение 480px */
 @media (max-width: 480px) {
 
-body {
+/*body {
     cursor: pointer;
-}
+}*/
 
 .main-menu {
     display: none;
