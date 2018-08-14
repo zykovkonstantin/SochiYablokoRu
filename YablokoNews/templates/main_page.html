@@ -5,20 +5,27 @@
     Яблоко в Сочи
  {% endblock %}
 
+ {% block link %}
+    <link rel="stylesheet" href="{% static 'css/slide.css' %}">
+ {% endblock %}
+
  {% block content %}
-    <dev class="welcome">
-        <img src="{% static 'images/img.jpg' %}">
-        <dev>
-            <h1>ДОБРО ПОЖАЛОВАТЬ</h1>
-        </dev>
-    </dev>
+    <div class="welcome">
+        <slider>
+            <slide><p>ДОБРО ПОЖАЛОВАТЬ 1</p></slide>
+            <slide><p>ДОБРО ПОЖАЛОВАТЬ 2</p></slide>
+            <slide><p>ДОБРО ПОЖАЛОВАТЬ 3</p></slide>
+            <slide><p>ДОБРО ПОЖАЛОВАТЬ 4</p></slide>
+            <slide><p>ДОБРО ПОЖАЛОВАТЬ 5</p></slide>
+        </slider>
+    </div>
 
-    <dev class="last-news">
-        <dev class="last-news-title">
+    <div class="last-news">
+        <div class="last-news-title">
             <h3>ПОСЛЕДНИЕ НОВОСТИ</h3>
-        </dev>
+        </div>
 
-        <dev class="last-news-block">
+        <div class="last-news-block">
             <ul>
                 {% for one_news in last_news %}
                 <li>
@@ -32,6 +39,6 @@
                 </li>
                 {% endfor %}
             </ul>
-        </dev>
-    </dev>
+        </div>
+    </div>
  {% endblock %}

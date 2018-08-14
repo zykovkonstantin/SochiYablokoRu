@@ -81,6 +81,7 @@ ul {
     top: 9px;
     left: 175px;
     font-size: 3em;
+    word-spacing: -6px;
 }
 
 .main-menu {
@@ -113,8 +114,9 @@ ul {
     top: 19px;
     left: 8px;
     right: 8px;
-    height: 3px;
+    height: 4px;
     background: white;
+    border-radius: 3px;
 }
 .nav-toggle span:before, .nav-toggle span:after {
     content: "";
@@ -122,8 +124,9 @@ ul {
     display: block;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: white;
+    border-radius: 3px;
 }
 .nav-toggle span:before {
     top: -10px;
@@ -175,12 +178,15 @@ footer img{
 .welcome {
     text-align: center;
     overflow:hidden;
+    position:relative;
+    height: 400px;
 }
 
-.welcome img {
+.welcome slider {
     object-fit: cover;
     width: 100%;
     height: 300px;
+    overflow: hidden;
 }
 
 .welcome h1 {
@@ -193,7 +199,6 @@ footer img{
 .last-news {
     text-align: center;
     position: relative;
-    bottom: 50px;
 }
 
 .last-news h3 {
@@ -298,13 +303,20 @@ footer img{
 
 .main-logo div{
     left: 148px;
+    user-select: none;
 }
 
 .last-news-block li {
     width: calc(100% - 20px);
 }
+
+.welcome {
+    height: 200px;
 }
 
+}
+
+/* Тут надо будет описать меню для смартфонов */
 div.nav-toggle:hover > span {
     background: green;
 }
