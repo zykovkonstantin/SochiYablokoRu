@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'main_page.html', {'last_news': last_news})
 
 
+# TODO после расширения модели, нужны выборки по типу поста
 def news(request):
     news = News.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'news.html', {'news': news})
