@@ -21,10 +21,10 @@ slider > * {
   height: 100%;
   left: 100%;
   background-color: #1f1f1f;
-  -webkit-animation: slide 12s infinite;
-  -moz-animation: slide 12s infinite;
-  -o-animation: slide 12s infinite;
-  animation: slide 12s infinite;
+  -webkit-animation: slide 36s infinite;
+  -moz-animation: slide 36s infinite;
+  -o-animation: slide 36s infinite;
+  animation: slide 36s infinite;
   overflow: hidden;
 }
 
@@ -42,20 +42,21 @@ slide:nth-child(1) {
 
 
 slide:nth-child(2) {
-  -webkit-animation-delay: 2s;
-  -moz-animation-delay: 2s;
-  -o-animation-delay: 2s;
-  animation-delay: 2s;
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  -o-animation-delay: 8s;
+  animation-delay: 8s;
   background-image: url(/static/images/main-page/slide-show/slide-show-2.jpg);
   background-size: cover;
   background-position: center;
 }
 
+
 slide:nth-child(3) {
-  -webkit-animation-delay: 5s;
-  -moz-animation-delay: 5s;
-  -o-animation-delay: 5s;
-  animation-delay: 5s;
+  -webkit-animation-delay: 17s;
+  -moz-animation-delay: 17s;
+  -o-animation-delay: 17s;
+  animation-delay: 17s;
     background-image: url(/static/images/main-page/slide-show/slide-show-3.jpg);
   background-size: cover;
   background-position: center;
@@ -70,26 +71,14 @@ slide:nth-child(4) {
 */
 
 slide:nth-child(4) {
-  -webkit-animation-delay: 8s;
-  -moz-animation-delay: 8s;
-  -o-animation-delay: 8s;
-  animation-delay: 8s;
-  background-image: url(/static/images/main-page/slide-show/slide-show-4.jpg);
+  -webkit-animation-delay: 26s;
+  -moz-animation-delay: 26s;
+  -o-animation-delay: 26s;
+  animation-delay: 26s;
+  background-image: url(/static/images/main-page/slide-show/slide-show-5.jpg);
   background-size: cover;
   background-position: center;
 }
-
-/*
-slide:nth-child(5) {
-  -webkit-animation-delay: 11s;
-  -moz-animation-delay: 11s;
-  -o-animation-delay: 11s;
-  animation-delay: 11s;
-  background-image: url(/static/images/main-page/slide-show/slide-show-5.jpg);
-  background-size: cover;
-  background-position: bottom;
-}
-*/
 
 slide p {
   /*font-family: 'Sue Ellen Francisco', cursive;*/

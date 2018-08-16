@@ -1,325 +1,281 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
-
-
 /* Общие правила и классы */
 
-html { height: 100%; }
-
+html {
+	height: 100%;
+}
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
-
 ul {
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-padding-start: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-padding-start: 0;
 }
-
 .container {
-    width: 100%;
+	width: 100%;
 }
-
 .container:after {
-    content: "";
-    display: table;
-    clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
-
 /* Все что связанно с header */
 
-.main-menu-container  {
-    color: #fff;
-    background: rgba(40,40,41,100);
+.main-menu-container {
+	color: #fff;
+	background: rgba(40,40,41,100);
 }
-
 .main-menu li {
-    display:inline-block;
+	display: inline-block;
 }
-
 .main-menu a {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    padding: 21px 15px 21px;
-    margin-top: 5px;
-    font-weight: 600;
-    letter-spacing: 2px;
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	padding: 21px 15px 21px;
+	margin-top: 5px;
+	font-weight: 600;
+	letter-spacing: 2px;
 }
-
 .main-menu a:hover:after {
-    content: ' ';
-    background: #f6164c;
-    height: 7px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+	content: ' ';
+	background: #f6164c;
+	height: 7px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
 }
-
 .main-logo {
-    float: left;
-    font-family: 'Marck Script', cursive;
-    height: 60px;
-    overflow: hidden;
+	float: left;
+	font-family: 'Marck Script', cursive;
+	height: 60px;
+	overflow: hidden;
 }
-
 .main-logo img {
-    height: 30px;
-    margin: 15px;
-    padding-left: 15px;
+	height: 30px;
+	margin: 15px;
+	padding-left: 15px;
+	margin-right: 150px;
 }
-
 .main-logo div {
-    position: absolute;
-    top: 9px;
-    left: 175px;
-    font-size: 3em;
-    word-spacing: -6px;
+	position: absolute;
+	top: 9px;
+	left: 175px;
+	font-size: 3em;
+	word-spacing: -6px;
 }
-
 .main-menu {
-    float: right;
-    padding-right: 30px;
+	float: right;
+	padding-right: 30px;
 }
 
+@media (max-width: 850px) {
+	.main-menu {
+		float: left;
+		padding-left: 20px;
+	}
+}
 .main-menu li.week-news {
-    background: #00a23c;
+	background: #00a23c;
 }
-
 .sub-menu-container {
-    background: #454745;
-    font-size: 0.7em;
+	background: #454745;
+	font-size: 0.7em;
 }
-
-/*Кнопка меню */
-
-.nav-toggle {
-    display: none;
-    position: relative;
-    float: right;
-    width: 50px;
-    margin: 10px 0 10px;
-    /*cursor: pointer;*/
-}
-.nav-toggle span {
-    display: block;
-    position: absolute;
-    top: 19px;
-    left: 8px;
-    right: 8px;
-    height: 4px;
-    background: white;
-    border-radius: 3px;
-}
-.nav-toggle span:before, .nav-toggle span:after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: white;
-    border-radius: 3px;
-}
-.nav-toggle span:before {
-    top: -10px;
-}
-.nav-toggle span:after {
-    bottom: -10px;
+.slim-container {
+	display: none;
 }
 
 /* Все что связанно в footer */
 
 footer {
-    background: rgba(40,40,41,100);
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    flex: 0 0 auto;
+	background: rgba(40,40,41,100);
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	flex: 0 0 auto;
 }
-
-footer img{
-    width: 240px;
-    padding: 10px;
+footer img {
+	width: 240px;
+	padding: 10px;
 }
-
 .socials {
-    padding: 10px 0 10px;
+	padding: 10px 0 10px;
 }
-
-.socials li{
-    display: inline-block;
+.socials li {
+	display: inline-block;
 }
-
 .socials a {
-    padding: 0 25px 0;
-    text-decoration: none;
-    font-size: 2em;
-    color: #fff;
-    font-family: 'Font Awesome 5 Brands';
+	padding: 0 25px 0;
+	text-decoration: none;
+	font-size: 2em;
+	color: #fff;
+	font-family: 'Font Awesome 5 Brands';
 }
-.socials a.tg:before {content: '\f2c6';}
-.socials a.fb:before {content: '\f09a';}
-.socials a.yt:before {content: '\f167';}
-
+.socials a.tg:before {
+	content: '\f2c6';
+}
+.socials a.fb:before {
+	content: '\f09a';
+}
+.socials a.yt:before {
+	content: '\f167';
+}
 /* Все что связанно с content */
 
 .content {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
-
 .welcome {
-    text-align: center;
-    overflow:hidden;
-    position:relative;
-    height: 400px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	height: 400px;
 }
-
 .welcome slider {
-    object-fit: cover;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
+	object-fit: cover;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
 }
-
 .welcome h1 {
-    position: relative;
-    bottom: 175px;
-    /*color: rgba(74,161,71,100);*/
-    text-transform: uppercase;
+	position: relative;
+	bottom: 175px;
+	/*color: rgba(74,161,71,100);*/
+	text-transform: uppercase;
 }
-
 .last-news {
-    text-align: center;
-    position: relative;
+	text-align: center;
+	position: relative;
 }
-
 .last-news h3 {
-    font-size: 1.5em;
-    color: rgba(74,161,71,100);
-    text-transform: uppercase;
+	font-size: 1.5em;
+	color: rgba(74,161,71,100);
+	text-transform: uppercase;
 }
-
 .last-news h4 {
-    font-size: 1.2em;
-    color: black;
-    text-align: left;
-    padding: 10px;
-    margin: 0;
+	font-size: 1.2em;
+	color: black;
+	text-align: left;
+	padding: 10px;
+	margin: 0;
 }
-
 .last-news-block p {
-    text-transform: uppercase;
-    color: #797979;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    margin: 0;
+	text-transform: uppercase;
+	color: #797979;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	margin: 0;
 }
-
-.last-news-block li{
-    display: inline-block;
-    width: 25%;
-    height: 250px;
-    margin: 10px;
+.last-news-block li {
+	display: inline-block;
+	width: 25%;
+	height: 250px;
+	margin: 10px;
 }
-
-.last-news-block a{
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    color: #fff;
-    text-decoration: none;
-    background: #f6f6f6;
-    width: 100%;
-    height: 100%;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    overflow: hidden;
-
-    transition-property: color;
-    transition-duration: 0.7s;
-    transition-timing-function: ease-in;
-    transition-delay: 0.3s;
+.last-news-block a {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	color: #fff;
+	text-decoration: none;
+	background: #f6f6f6;
+	width: 100%;
+	height: 100%;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+	overflow: hidden;
+	transition-property: color;
+	transition-duration: 0.7s;
+	transition-timing-function: ease-in;
+	transition-delay: 0.3s;
 }
-
 .last-news-block a:hover {
-    color: black;
-    position: relative;
-    bottom: 5px;
-    right: 5px;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
-    overflow: hidden;
+	color: black;
+	position: relative;
+	bottom: 5px;
+	right: 5px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	overflow: hidden;
 }
-
 .last-news-block img {
-    object-fit: cover;
-    width: 100%;
-    height: 120px;
+	object-fit: cover;
+	width: 100%;
+	height: 120px;
 }
 
 /* Адаптируем дизайн под разрешение 480px */
-@media (max-width: 480px) {
-
+@media (max-width : 565px ){
 /*body {
     cursor: pointer;
 }*/
-
-.main-menu {
-    display: none;
-}
-
-.nav-toggle {
-    display: inline-block;
+	.slim-container {
+		display: block;
+	}
+.main-menu-container {
+	display: none;
 }
 
 .last-news-block li {
-    display: inline-block;
-    width: 100%;
-    height: 250px;
-    margin: 10px;
+	display: inline-block;
+	width: 100%;
+	height: 250px;
+	margin: 10px;
 }
-
 .last-news-block p {
-    text-transform: uppercase;
-    color: #797979;
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    right:unset;
-    margin: 0;
+	text-transform: uppercase;
+	color: #797979;
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	right: unset;
+	margin: 0;
 }
-
-.main-logo img{
-    padding-left: 0;
-    margin-left: 5px;
+.main-logo img {
+	padding-left: 0;
+	margin-left: 5px;
 }
-
-.main-logo div{
-    left: 148px;
-    user-select: none;
+.main-logo div {
+	left: 148px;
+	user-select: none;
 }
-
 .last-news-block li {
-    width: calc(100% - 20px);
+	width: calc(100% - 20px);
 }
-
 .welcome {
-    height: 200px;
+	display: none;
 }
-
 }
-
+.slim-main-menu {
+	display: block;
+	position: relative;
+	top: 50px;
+	left: -390px;
+	width: 410px;
+}
+.slim-main-menu li {
+	display: inline;
+}
+.slim-main-menu a {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 5px 5px;
+	margin-top: 5px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
 /* Тут надо будет описать меню для смартфонов */
-div.nav-toggle:hover > span {
-    background: green;
+div.nav-toggle:hover > div.slim-main-menu {
+	display: block;
 }
-
-
-
