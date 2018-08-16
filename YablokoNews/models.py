@@ -9,10 +9,11 @@ class News(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     text = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
-
+    image = models.ImageField(upload_to='%Y/%m/%d', default='default.jpg')
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
         return self.title
+

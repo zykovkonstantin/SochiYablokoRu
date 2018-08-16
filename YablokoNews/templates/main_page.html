@@ -30,7 +30,7 @@
                 <li>
                     <a href="{% url 'news_detail' pk=one_news.pk %}">
                         <div>
-                            <img src="{% static 'images/img.jpg' %}"><br>
+                            <img src="{{ one_news.image.url }}"><br>
                             <h4>{{ one_news.title }}</h4>
                             <p>{{ one_news.published_date.date }}</p>
                         </div>
