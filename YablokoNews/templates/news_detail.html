@@ -4,6 +4,6 @@
 {% block content %}
 
 <h1>{{ one_news.title }}</h1>
-<p>{{ one_news.text }}</p>
+<p>{{ one_news.text|safe }}</p>
 
 {% endblock %}

@@ -10,6 +10,7 @@ class News(models.Model):
     text = models.TextField()
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to='%Y/%m/%d', default='default.jpg')
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -17,3 +18,16 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+
+class Advertising(models.Model):
+    title = models.CharField(max_length=100)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+    text = models.TextField()
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
