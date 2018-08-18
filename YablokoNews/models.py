@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+import calendar
 
 
 # TODO Расширить модель поста: новость, блог, анонс

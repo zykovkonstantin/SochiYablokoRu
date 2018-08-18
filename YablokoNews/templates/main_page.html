@@ -1,15 +1,17 @@
- {% extends 'base.html' %}
- {% load static %}
+{% extends 'base.html' %}
+{% load static %}
+{% load month_name_def %}
 
- {% block title %}
+{% block title %}
     Яблоко в Сочи
- {% endblock %}
+{% endblock %}
 
- {% block link %}
+{% block link %}
     <link rel="stylesheet" href="{% static 'css/slide.css' %}">
- {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
- {% block content %}
+{% block content %}
     <div class="welcome">
         <slider>
             <slide><p>ДОБРО ПОЖАЛОВАТЬ 1</p></slide>
@@ -20,27 +22,50 @@
     </div>
 
     <div class="last-news">
-        <div class="last-news-title">
+        <div>
             <h3>ПОСЛЕДНИЕ НОВОСТИ</h3>
         </div>
 
         <div class="last-news-block">
             <ul>
                 {% for one_news in last_news %}
-                <li>
-                    <a href="{% url 'news_detail' pk=one_news.pk %}">
-                        <div>
-                            <img src="{{ one_news.image.url }}"><br>
-                            <h4>{{ one_news.title }}</h4>
-                            <p>{{ one_news.published_date.date }}</p>
-                        </div>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'news_detail' pk=one_news.pk %}">
+                            <div>
+                                <img src="{{ one_news.image.url }}">
+                                <h4>{{ one_news.title }}</h4>
+                                <p>{{ one_news.published_date.date }}</p>
+                            </div>
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 
-<!--TODO Сделать блок Анонсы-->
-
- {% endblock %}
+    <!--TODO Сделать блок Анонсы-->
+    <div class="advertising">
+        <div>
+            <h3>АНОНС</h3>
+        </div>
+        <div class="advertising-block">
+            <ul>
+                {% for adv in advertisings %}
+                    <li>
+                        <div class="adv_date">
+                            <div class="adv_day">
+                            {{ adv.published_date.day }}
+                            </div>
+                            <div>
+                            {{ adv.published_date.month|month_name }}
+                            </div>
+                        </div>
+                        <div class="adv_title">
+                            <a href="#">{{ adv.title }}</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

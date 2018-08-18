@@ -1,0 +1,68 @@
+/* Все что связанно в footer */
+
+footer {
+    background: rgba(40, 40, 41, 100);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+footer img {
+    width: 240px;
+    padding: 10px;
+}
+
+.socials {
+    padding: 10px 0 10px;
+}
+
+.socials li {
+    display: inline-block;
+}
+
+.socials a {
+    padding: 0 25px 0;
+    text-decoration: none;
+    font-size: 2em;
+    color: #fff;
+    font-family: 'Font Awesome 5 Brands', serif;
+}
+
+.socials a.tg:before {
+    content: '\f2c6';
+}
+
+.socials a.fb:before {
+    content: '\f09a';
+}
+
+.socials a.yt:before {
+    content: '\f167';
+}
+
+
+@media (max-width: 565px ) {
+    footer {
+        height: 50px;
+        overflow: hidden;
+    }
+
+    .footer-logo {
+        width: 50%;
+        float: left;
+    }
+
+    .footer-logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .socials {
+        float: right;
+    }
+
+    .socials a {
+        padding: 10px;
+    }
+}
