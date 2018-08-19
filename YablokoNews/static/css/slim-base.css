@@ -35,19 +35,19 @@ a {
     color: white;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 20px;
 }
 
 .slim-main-logo img {
-    height: 30px;
-    margin: 0 15px 15px;
+    height: 20px;
+    margin: 0 10px 10px;
     padding-left: 15px;
 }
 
 
 .slim-main-logo div {
     font-family: 'Marck Script', cursive;
-    font-size: 3em;
+    font-size: 2em;
     word-spacing: -7px;
     user-select: none;
 }
