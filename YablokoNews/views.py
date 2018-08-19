@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import News, Advertising
-import datetime
 
 
 # Create your views here.
@@ -13,7 +12,7 @@ def index(request):
 
 # TODO после расширения модели, нужны выборки по типу поста
 def news(request):
-    news = News.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    news = News.objects.filter(published_date__lte=timezone.now(), news_type='НОВОСТИ').order_by('published_date')
     return render(request, 'news.html', {'news': news})
 
 

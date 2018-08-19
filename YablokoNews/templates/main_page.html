@@ -33,6 +33,7 @@
                         <a href="{% url 'news_detail' pk=one_news.pk %}">
                             <div>
                                 <img src="{{ one_news.image.url }}">
+                                <h4 class="news_type">{{ one_news.news_type }}</h4>
                                 <h4>{{ one_news.title }}</h4>
                                 <p>{{ one_news.published_date.date }}</p>
                             </div>
