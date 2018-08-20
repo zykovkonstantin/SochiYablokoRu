@@ -44,25 +44,20 @@
         </div>
     </div>
 
-    <!--TODO Сделать блок Анонсы-->
-    <div class="advertising">
+    <div class="anons">
         <div>
             <h3>АНОНС</h3>
         </div>
-        <div class="advertising-block">
+        <div class="anons-div">
             <ul>
                 {% for adv in advertisings %}
                     <li>
-                        <div class="adv_date">
-                            <div class="adv_day">
-                            {{ adv.published_date.day }}
-                            </div>
-                            <div>
-                            {{ adv.published_date.month|month_name }}
-                            </div>
+                        <div class="anons_date">
+                            <div class="anons_day">{{ adv.published_date.day }}</div>
+                            <div>{{ adv.published_date.month|month_name }}</div>
                         </div>
-                        <div class="adv_title">
-                            <a href="#">{{ adv.title }}</a>
+                        <div class="anons_title">
+                            <a href="{% url 'adv_detail' pk=adv.pk %}">{{ adv.title }}</a>
                         </div>
                     </li>
                 {% endfor %}

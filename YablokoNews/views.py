@@ -19,3 +19,8 @@ def news(request):
 def news_detail(request, pk):
     one_news = get_object_or_404(News, pk=pk)
     return render(request, 'news_detail.html', {'one_news': one_news})
+
+
+def adv_detail(request, pk):
+    adv = get_object_or_404(Advertising, pk=pk)
+    return render(request, 'news_detail.html', {'adv': adv})

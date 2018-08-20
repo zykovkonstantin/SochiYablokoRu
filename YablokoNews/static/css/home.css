@@ -102,17 +102,17 @@ slider {
     height: 120px;
 }
 
-.advertising {
+.anons {
     background: lightgray;
 }
 
-.advertising-block li {
+.anons-div li {
     display: inline-block;
     align-items: center;
     width: 100%;
 }
 
-.adv_date {
+.anons_date {
     text-transform: uppercase;
     margin-left: 25px;
     padding: 10px;
@@ -122,16 +122,16 @@ slider {
     text-align: center;
 }
 
-.adv_day {
+.anons_day {
     font-size: 3em;
 }
 
-.adv_title {
+.anons_title {
     position: relative;
     top: 19px;
 }
 
-.adv_title a {
+.anons_title a {
     text-decoration: none;
     font-size: 2em;
     color: black;
@@ -196,21 +196,21 @@ slider {
         margin: 0;
     }
 
-    .adv_date {
+    .anons_date {
         margin-left: 0;
         padding: 5px 10px 10px;
         width: 80px;
         font-size: 0.7em;
     }
 
-    .adv_day {
+    .anons_day {
         font-size: 2em;
     }
 
-    .adv_title {
+    .anons_title {
         top: 9px;
     }
-    .adv_title a {
+    .anons_title a {
         font-size: 1em;
     }
 }

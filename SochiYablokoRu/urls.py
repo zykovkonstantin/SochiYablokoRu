@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('news/', views.news, name='news'),
     path('news/<int:pk>', views.news_detail, name='news_detail'),
+    path('adv/<int:pk>', views.adv_detail, name='adv_detail'),
     path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:
