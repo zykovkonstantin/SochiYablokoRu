@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Advertising, Commentaries
+from .models import News, Advertising
 from django_summernote.admin import SummernoteModelAdmin
 
 
