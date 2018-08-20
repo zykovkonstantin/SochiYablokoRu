@@ -107,9 +107,7 @@ slider {
 }
 
 .advertising-block li {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    display: inline-block;
     align-items: center;
     width: 100%;
 }
@@ -126,6 +124,11 @@ slider {
 
 .adv_day {
     font-size: 3em;
+}
+
+.adv_title {
+    position: relative;
+    top: 19px;
 }
 
 .adv_title a {
@@ -204,6 +207,9 @@ slider {
         font-size: 2em;
     }
 
+    .adv_title {
+        top: 9px;
+    }
     .adv_title a {
         font-size: 1em;
     }
