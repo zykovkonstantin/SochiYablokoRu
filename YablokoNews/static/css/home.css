@@ -146,6 +146,16 @@ slider {
     font-weight: 600;
 }
 
+@media (max-width: 768px ) {
+    .last-news h4 {
+        font-size: 0.95em;
+    }
+
+    .empty_anons_title {
+        font-size: 1.5em;
+    }
+}
+
 @media (max-width: 565px ) {
     h3 {
         font-size: 1.2em;
@@ -218,7 +228,28 @@ slider {
     .anons_title {
         top: 9px;
     }
+
     .anons_title a {
         font-size: 1em;
+    }
+
+    .empty_anons_title {
+        display: inline-block;
+        font-size: 1em;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 320px ) {
+    .last-news-block h4 {
+        font-size: 0.8em;
+        line-height: 1em;
+    }
+
+    .last-news-block p {
+        font-size: 0.6em;
     }
 }

@@ -8,44 +8,58 @@
         {% block title %}
         {% endblock %}
     </title>
-        {% block link %}
-        {% endblock %}
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+    {% block link %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link href="{% static 'css/slim-base.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
+          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <header>
     <div class="container main-menu-container">
         <div class="main-logo">
-            <a href="/"><img src="{% static 'images/logo-white.png' %}"><div>в Сочи</div></a>
+            <a href="/"><img src="{% static 'images/logo-white.png' %}">
+                <div>в Сочи</div>
+            </a>
         </div>
         <div class="main-menu">
-                <ul>
-                    <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
-                    <li><a href="#">ПРОЕКТЫ</a></li>
-                    <li><a href="/">КОНТАКТЫ</a></li>
-                    <li><a href="/">ПОДДЕРЖАТЬ</a></li>
-                </ul>
+            <ul>
+                <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
+                <li><a href="#">ПРОЕКТЫ</a></li>
+                <li><a href="/">КОНТАКТЫ</a></li>
+                <li><a href="/">ПОДДЕРЖАТЬ</a></li>
+            </ul>
         </div>
     </div>
     <div class="slim-container">
         <div class="slim-main-logo">
-            <a href="/"><img src="{% static 'images/logo-white.png' %}"><div>в Сочи</div></a>
+            <a href="/"><img src="{% static 'images/logo-white.png' %}">
+                <div>в Сочи</div>
+            </a>
         </div>
-		<input id="toggle" type="checkbox">
-		<label class="toggle-container" for="toggle">
+        <input id="toggle" type="checkbox">
+        <label class="toggle-container" for="toggle">
             <span class="button button-toggle"></span>
         </label>
-		<nav class="nav">
+        <nav class="nav">
             <a class="nav-item" href="{% url 'news' %}">НОВОСТИ</a>
             <a class="nav-item" href="">ПРОЕКТЫ</a>
             <a class="nav-item" href="">КОНТАКТЫ</a>
             <a class="nav-item" href="">ПОДДЕРЖАТЬ</a>
         </nav>
-	</div>
+    </div>
 </header>
 
 <div class="content">
