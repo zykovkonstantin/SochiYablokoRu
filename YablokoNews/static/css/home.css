@@ -131,6 +131,14 @@ slider {
     top: 19px;
 }
 
+.empty_anons_title {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 2em;
+    color: black;
+    font-weight: 600;
+}
+
 .anons_title a {
     text-decoration: none;
     font-size: 2em;

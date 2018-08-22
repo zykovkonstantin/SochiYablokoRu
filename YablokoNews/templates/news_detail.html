@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link href="{% static 'css/news_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block title %}
     Новости . Яблоко в Сочи
 {% endblock %}
 
 {% block content %}
+    <div class="news_detail_block">
+        <div class="news_detail_header">
+            <div class="news_detail_date">
+                {{ one_news.published_date }}
+            </div>
+            <div class="news_detail_title">{{ one_news.title }}</div>
+            {% include 'social_share.html' %}
+        </div>
+        <div class="news_detail_text">
+        {{ one_news.text|safe }}
+    </div>
+        <div class="news_detail_footer">
+            {% include 'social_share.html' %}
+        </div>
+        <div class="news_detail_comments">
 
-<h1>{{ one_news.title }}</h1>
-<p>{{ one_news.text|safe }}</p>
-
-
+        </div>
+    </div>
 {% endblock %}

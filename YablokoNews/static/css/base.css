@@ -100,6 +100,10 @@ ul {
         float: left;
         padding-left: 20px;
     }
+
+    .floating-social-bar a {
+        font-size: 12px;
+    }
 }
 
 .main-menu li.week-news {
@@ -140,5 +144,35 @@ ul {
         left: 148px;
         user-select: none;
     }
+}
+
+.floating-social-bar {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.floating-social-bar a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 2px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.twitter-share {
+    background-color: #00aced;
+}
+
+.facebook-share {
+    background-color: #3b5998;
+}
+
+.googleplus-share {
+    background-color: #dd4b39;
 }
 
