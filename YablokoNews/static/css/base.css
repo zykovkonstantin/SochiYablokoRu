@@ -95,7 +95,7 @@ ul {
     padding-right: 30px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 768px) {
     .main-menu {
         float: left;
         padding-left: 20px;
@@ -126,7 +126,7 @@ ul {
 }
 
 /* Адаптируем дизайн под разрешение 480px */
-@media (max-width: 565px ) {
+@media (max-width: 425px ) {
     .slim-container {
         display: block;
     }

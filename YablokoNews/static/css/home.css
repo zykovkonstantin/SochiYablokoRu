@@ -243,7 +243,7 @@ slider {
     }
 }
 
-@media (max-width: 320px ) {
+@media (max-width: 425px ) {
     .last-news-block h4 {
         font-size: 0.8em;
         line-height: 1em;

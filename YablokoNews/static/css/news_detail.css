@@ -20,5 +20,15 @@
     font-weight: 300;
     font-size: 3.5em;
     line-height: 1em;
-    margin-bottom: 0.5em;
+}
+
+@media (max-width: 425px) {
+    .news_detail_date {
+        margin: 20px 0 15px;
+    }
+
+    .news_detail_title {
+        font-size: 2em;
+    }
+
 }
