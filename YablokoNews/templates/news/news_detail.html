@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link href="{% static 'css/news/news_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Новости . Яблоко в Сочи
+{% endblock %}
+
+{% block content %}
+    <div class="news_detail_block">
+        <div class="news_detail_header">
+            <div class="news_detail_date">{{ one_news.published_date }}</div>
+            <div class="news_detail_title">{{ one_news.title }}</div>
+            {% include 'news/social_share.html' %}
+        </div>
+        <div class="news_detail_text">{{ one_news.text|safe }}</div>
+        <div class="news_detail_footer">
+            {% include 'news/social_share.html' %}
+        </div>
+        <div class="fb-comments" data-href="http://messknight.pythonanywhere.com/{{ request.get_full_path }}"
+             data-width="100%" data-numposts="5"></div>
+    </div>
+
+    <div class="left_news_block">
+        <div class="left_news_block_title">ПОСЛЕДНИЕ НОВОСТИ</div>
+        <ul>
+            {% for new in last_news %}
+                <li>
+                    <a href="{% url 'news_detail' pk=new.pk %}">
+                        <div class="left_news_block_type">{{ new.news_type }}</div>
+                        <div class="left_news_block_text">{{ new.title }}</div>
+                        <div class="left_news_block_date">{{ new.published_date }}</div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

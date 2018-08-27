@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator, PageNotAnInteger
 from django.utils import timezone
 from .models import News, Advertising
+from .forms import NewsForm
 
 
 # Create your views here.
@@ -12,15 +14,45 @@ def index(request):
 
 # TODO после расширения модели, нужны выборки по типу поста
 def news(request):
-    news = News.objects.filter(published_date__lte=timezone.now(), news_type='НОВОСТИ').order_by('published_date')
-    return render(request, 'news.html', {'news': news})
+    all_news_list = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    paginator = Paginator(object_list=all_news_list, per_page=20, orphans=3)
+    page = request.GET.get('page')
+    try:
+        all_news = paginator.page(page)
+    except PageNotAnInteger:
+        all_news = paginator.page(1)
+    return render(request, 'news/news.html', {'all_news': all_news})
+
+
+# @login_required
+def news_add(request):
+    if request.method == 'POST':
+        form = NewsForm(request.POST)
+        post = form.save(commit=False)
+        post.author = request.user
+        post.created_date = timezone.now()
+        post.save()
+        return redirect('news_detail', pk=post.pk)
+    else:
+        form = NewsForm()
+    return render(request, 'news/news_add.html', {'form': form})
 
 
 def news_detail(request, pk):
     one_news = get_object_or_404(News, pk=pk)
-    return render(request, 'news_detail.html', {'one_news': one_news})
+    last_news = News.objects.filter(published_date__lte=timezone.now()).exclude(pk=pk).order_by('-published_date')[:10]
+    return render(request, 'news/news_detail.html', {'one_news': one_news, 'last_news': last_news})
 
 
 def adv_detail(request, pk):
     adv = get_object_or_404(Advertising, pk=pk)
-    return render(request, 'news_detail.html', {'adv': adv})
+    last_news = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:10]
+    return render(request, 'news/news_detail.html', {'one_news': adv, 'last_news': last_news})
+
+
+def projects(request):
+    return render(request, 'projects.html')
+
+
+def contacts(request):
+    return render(request, 'contacts.html')

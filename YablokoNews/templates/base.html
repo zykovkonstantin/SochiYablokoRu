@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +12,11 @@
     {% block link %}
     {% endblock %}
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    <link href="{% static 'css/slim-base.css' %}" rel="stylesheet">
-    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
-          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link href="{% static 'css/news/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/news/slim-base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/news/footer.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
 <div id="fb-root"></div>
@@ -30,6 +30,18 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 <header>
     <div class="container main-menu-container">
+        <div class="auth_line">
+            <span class="search_line">
+                <input type="search" name="q" placeholder="  Поиск" class="search">
+                <input type="submit" class="submit" value="&#xf002;">
+            </span>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="login_button">ВЫХОД</a>
+                <div>{{ request.user }}</div>
+            {% else %}
+                <a href="{% url 'login' %}" class="login_button">ВХОД</a>
+            {% endif %}
+        </div>
         <div class="main-logo">
             <a href="/"><img src="{% static 'images/logo-white.png' %}">
                 <div>в Сочи</div>
@@ -38,9 +50,9 @@
         <div class="main-menu">
             <ul>
                 <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
-                <li><a href="#">ПРОЕКТЫ</a></li>
-                <li><a href="/">КОНТАКТЫ</a></li>
-                <li><a href="/">ПОДДЕРЖАТЬ</a></li>
+                <li><a href="{% url 'projects' %}">ПРОЕКТЫ</a></li>
+                <li><a href="{% url 'contacts' %}">КОНТАКТЫ</a></li>
+                {#                <li><a href="/">ПОДДЕРЖАТЬ</a></li>#}
             </ul>
         </div>
     </div>
@@ -56,9 +68,9 @@
         </label>
         <nav class="nav">
             <a class="nav-item" href="{% url 'news' %}">НОВОСТИ</a>
-            <a class="nav-item" href="">ПРОЕКТЫ</a>
-            <a class="nav-item" href="">КОНТАКТЫ</a>
-            <a class="nav-item" href="">ПОДДЕРЖАТЬ</a>
+            <a class="nav-item" href="{% url 'projects' %}">ПРОЕКТЫ</a>
+            <a class="nav-item" href="{% url 'contacts' %}">КОНТАКТЫ</a>
+            {#            <a class="nav-item" href="">ПОДДЕРЖАТЬ</a>#}
         </nav>
     </div>
 </header>

@@ -84,6 +84,7 @@ ul {
 .main-logo div {
     position: absolute;
     top: 9px;
+    /*top: 36px;*/
     left: 175px;
     font-size: 3em;
     word-spacing: -6px;
@@ -96,10 +97,6 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .main-menu {
-        float: left;
-        padding-left: 20px;
-    }
 
     .floating-social-bar a {
         font-size: 12px;
@@ -107,7 +104,7 @@ ul {
 }
 
 .main-menu li.week-news {
-    background: #00a23c;
+    color: rgba(74, 161, 71, 100);
 }
 
 .sub-menu-container {
@@ -176,3 +173,65 @@ ul {
     background-color: #dd4b39;
 }
 
+/* TODO доделать страницу входа и кнопки входа*/
+
+.auth_line {
+    display: none;
+    width: 100%;
+    height: 27px;
+    background: rgb(64, 64, 65);
+}
+
+.login_button {
+    text-decoration: none;
+    width: 100px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    float: right;
+    padding: 5px 20px 5px 20px;
+    background: rgba(74, 161, 71, 100);
+    margin-right: 40px;
+    text-align: center;
+}
+
+.login_button:hover {
+    background: rgb(66, 131, 66);
+}
+
+.auth_line div {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    float: right;
+    padding: 5px 20px 5px 20px;
+}
+
+span.search_line {
+    position: absolute;
+    right: 300px;
+}
+
+.search {
+    color: white;
+    background: rgb(40, 40, 41);
+    border-radius: 10px;
+    margin-top: 5px;
+    border: 0;
+    padding-left: 10px;
+}
+
+input.search:focus {
+    background: white;
+    color: black;
+}
+
+input.submit {
+    font-family: 'Font Awesome 5 Free', serif;
+    font-weight: 900;
+    color: white;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.news_block {
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: calc(100% - 200px);
+    position: relative;
+    float: left;
+}
+
+.similar_news_block {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+    float: right;
+    padding: 0 5px 0 5px;
+}
+
+@media (max-width: 425px) {
+    .news_block {
+        width: 100%;
+    }
+
+    .similar_news_block {
+        display: none;
+    }
+}

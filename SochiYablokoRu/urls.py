@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth import urls
 from django.urls import path, include
 from YablokoNews import views
 from django.conf import settings
@@ -21,10 +22,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include(urls)),
     path('', views.index, name='index'),
     path('news/', views.news, name='news'),
+    path('news/add/', views.news_add, name='news_add'),
     path('news/<int:pk>', views.news_detail, name='news_detail'),
     path('adv/<int:pk>', views.adv_detail, name='adv_detail'),
+    path('projects/', views.projects, name='projects'),
+    path('contacts/', views.contacts, name='contacts'),
     path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:

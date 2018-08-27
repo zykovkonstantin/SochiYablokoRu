@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link href="{% static 'css/news/news.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/news/main_page.css' %}">
+{% endblock %}
+
+{% block title %}
+    Новости . Яблоко в Сочи
+{% endblock %}
+
+{% block sub-menu %}
+    <li class="week-news"><a href="..">АКТУАЛЬНОЕ</a></li>
+    <li><a href="#">ВСЕ НОВОСТИ</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="last-news">
+        <div class="last-news-block">
+            <ul>
+                {% for one_news in all_news %}
+                    <li>
+                        <a href="{% url 'news_detail' pk=one_news.pk %}">
+                            <div>
+                                <img src="{{ one_news.image.url }}">
+                                <h4 class="news_type">{{ one_news.news_type }}</h4>
+                                <h4>{{ one_news.title }}</h4>
+                                <p>{{ one_news.published_date }}</p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="pagination">
+    <span class="step-links">
+        {% if all_news.has_previous %}
+            <a href="?page={{ all_news.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+
+        <span class="current">
+            Страница {{ all_news.number }} из {{ all_news.paginator.num_pages }}.
+        </span>
+
+        {% if all_news.has_next %}
+            <a href="?page={{ all_news.next_page_number }}">Следующая</a>
+        {% endif %}
+    </span>
+        </div>
+    </div>
+{% endblock %}

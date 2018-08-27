@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Добавить новость . Яблоко в Сочи
+{% endblock %}
+
+{% block content %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p|safe }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

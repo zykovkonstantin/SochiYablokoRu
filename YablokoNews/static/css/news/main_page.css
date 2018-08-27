@@ -81,10 +81,6 @@ slider {
     height: 100%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    transition-property: color;
-    transition-duration: 0.7s;
-    transition-timing-function: ease-in;
-    transition-delay: 0.3s;
 }
 
 .last-news-block a:hover {
@@ -127,8 +123,7 @@ slider {
 }
 
 .anons_title {
-    position: relative;
-    top: 19px;
+    padding: 10px;
 }
 
 .empty_anons_title {
@@ -226,11 +221,11 @@ slider {
     }
 
     .anons_title {
-        top: 9px;
+        padding: 5px;
     }
 
     .anons_title a {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     .empty_anons_title {

@@ -10,8 +10,7 @@ News_Types = (
 
 # TODO Расширить модель поста: новость, блог, анонс
 class News(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, default='auth.User',
-                               verbose_name='Автор')
+    author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, verbose_name='Автор')
     news_type = models.CharField(max_length=20, choices=News_Types, default='НОВОСТИ', verbose_name='Тип публикации')
     title = models.CharField(max_length=100, verbose_name='Заголовок')
     # created_date = models.DateTimeField(default=timezone.now, verbose_name='Дата создания')
