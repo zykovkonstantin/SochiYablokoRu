@@ -80,13 +80,20 @@ slide:nth-child(4) {
 
 slide p {
     /*font-family: 'Sue Ellen Francisco', cursive;*/
-    font-size: 3em;
-    text-align: center;
+    font-size: 2em;
+    text-align: left;
     display: inline-block;
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 45vh;
     color: white;
     text-shadow: 0px 0px 500px black;
+    background: rgba(0, 0, 0, 0.8);
+    padding-left: 50px;
+    text-transform: uppercase;
+}
+
+slide p span {
+    color: rgba(74, 161, 71, 100);
 }
 
 /*
