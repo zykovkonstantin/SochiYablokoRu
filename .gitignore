@@ -5,3 +5,6 @@ myvenv
 db.sqlite3
 .DS_Store
 settings.py
+migrations
+media
+static
