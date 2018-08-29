@@ -5,8 +5,10 @@ from django_summernote.admin import SummernoteModelAdmin
 
 class NewsModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     summernote_fields = ('text',)
-    list_display = ('news_type', 'title', 'published_date', 'author')
+    list_display = ('news_type', 'title', 'published_date', 'author', 'image', 'image_img')
     list_filter = ['news_type', 'author']
+    readonly_fields = ['image_img', ]
+    fields = ['author', 'title', 'text', 'published_date', 'image', 'image_img']
 
 
 class AdvModelAdmin(SummernoteModelAdmin):
