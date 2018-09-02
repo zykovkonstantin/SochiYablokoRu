@@ -4,6 +4,7 @@
 {% block link %}
     <link href="{% static 'css/news/news.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/news/main_page.css' %}">
+    <link href="{% static 'css/sub_menu.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block title %}
@@ -11,8 +12,20 @@
 {% endblock %}
 
 {% block sub-menu %}
-    <li class="week-news"><a href="..">АКТУАЛЬНОЕ</a></li>
-    <li><a href="#">ВСЕ НОВОСТИ</a></li>
+    <div class="sub_menu">
+        <ul class="sub_menu_ul">
+
+            <li>
+                <a href="">БЛОГ</a>
+            </li>
+            <li>
+                <a href="" style="background: lightslategray">ВСЕ</a>
+            </li>
+            <li>
+                <a href="">ПУБЛИКАЦИИ</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
 
 {% block content %}
