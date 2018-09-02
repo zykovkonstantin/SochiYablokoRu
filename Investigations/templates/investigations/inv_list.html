@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load extra_scripts %}
+{% load static %}
+
+{% block title %}
+    Расследования . Яблоко в Сочи
+{% endblock %}
+
+{% block link %}
+    <link href="{% static 'css/inv/inv_list.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sub_menu.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block sub-menu %}
+    <div class="sub_menu">
+        <ul class="sub_menu_ul">
+            <li>
+                <a href="" style="background: lightslategray">РАССЛЕДОВАНИЯ</a>
+            </li>
+            <li>
+                <a href="">ШКОЛА ДЕПУТАТОВ</a>
+            </li>
+            <li>
+                <a href="">АЛЬТЕРНАТИВНЫЙ СОЧИ</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="inv_list">
+        <ul class="inv_list_ul">
+            {% for inv in all_inv %}
+                <li class="inv_list_li">
+                    <a href="">
+                        <div class="inv_list_header">
+                            <div class="inv_list_status">{{ inv.status|get_status }}</div>
+                            <div class="inv_list_title">{{ inv.title }}</div>
+                            <div class="inv_list_description">{{ inv.description }}</div>
+                        </div>
+                        <img src="{{ inv.image.url }}" class="inv_list_img">
+                    </a>
+                    <ul class="bases_list_ul">
+                        {% for base in inv|bases_list %}
+                            {% if base.type == '1' %}
+                                <li class="bases_list_li_2">
+                                    <a href="">
+                                        <div class="bases_type">ИНФОРМАЦИЯ</div>
+                                        {% elif base.type == '2' %}
+                                <li class="bases_list_li_3">
+                                    <a href="">
+                                        <div class="bases_type">ЖАЛОБА</div>
+                                        {% elif base.type == '3' %}
+                                <li class="bases_list_li_3">
+                                    <a href="">
+                                        <div class="bases_type">ЗАПРОС</div>
+                                        {% elif base.type == '4' %}
+                                <li class="bases_list_li_4">
+                                    <a href="">
+                                        <div class="bases_type">ОТВЕТ</div>
+                                        {% elif base.type == '5' %}
+                                <li class="bases_list_li_4">
+                                    <a href="">
+                                        <div class="bases_type">ОТВЕТ</div>
+                                        {% elif base.type == '6' %}
+                                <li class="bases_list_li_5">
+                                <a href="">
+                                <div class="bases_type">ИТОГИ</div>
+                            {% endif %}
+
+                        <div class="bases_type_end"></div>
+                        </a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth import urls
 from django.urls import path, include
 from YablokoNews import views
+from Investigations import views as inv_views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,7 +29,8 @@ urlpatterns = [
     path('news/add/', views.news_add, name='news_add'),
     path('news/<int:pk>', views.news_detail, name='news_detail'),
     path('adv/<int:pk>', views.adv_detail, name='adv_detail'),
-    path('projects/', views.projects, name='projects'),
+    path('projects/inv/', inv_views.investigations, name='projects'),
+    path('projects/inv/<int:pk>', inv_views.investigations_detail, name='inv_detail'),
     path('contacts/', views.contacts, name='contacts'),
     path('summernote/', include('django_summernote.urls')),
 ]

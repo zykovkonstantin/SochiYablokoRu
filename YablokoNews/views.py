@@ -12,7 +12,6 @@ def index(request):
     return render(request, 'main_page.html', {'last_news': last_news, 'advertisings': advertisings})
 
 
-# TODO после расширения модели, нужны выборки по типу поста
 def news(request):
     all_news_list = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     paginator = Paginator(object_list=all_news_list, per_page=20, orphans=3)
@@ -48,10 +47,6 @@ def adv_detail(request, pk):
     adv = get_object_or_404(Advertising, pk=pk)
     last_news = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:10]
     return render(request, 'news/news_detail.html', {'one_news': adv, 'last_news': last_news})
-
-
-def projects(request):
-    return render(request, 'projects.html')
 
 
 def contacts(request):

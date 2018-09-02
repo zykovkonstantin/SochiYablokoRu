@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for base in basesforinv %}
+            <li>
+                {{ base.title }}<br>
+                {{ base.published_date }}<br>
+                {{ base.text|safe }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

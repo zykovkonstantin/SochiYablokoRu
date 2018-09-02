@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'YablokoNews',
     'UserProfiles',
-    # 'Investigations',
+    'Investigations',
 ]
 
 MIDDLEWARE = [

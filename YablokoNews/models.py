@@ -19,7 +19,8 @@ class News(models.Model):
     created_date = timezone.now()
     text = models.TextField(verbose_name='Текст публикации')
     published_date = models.DateField(blank=True, null=True, verbose_name='Дата публикации')
-    image = models.ImageField(upload_to='%Y/%m/%d', default='default.jpg', verbose_name='Фото на обложку публикации')
+    image = models.ImageField(upload_to='news/%Y/%m/%d', default='default.jpg',
+                              verbose_name='Фото на обложку публикации')
 
     def author_name(self):
         return ('%s' + ' ' + '%s') % (self.author.first_name, self.author.last_name)
