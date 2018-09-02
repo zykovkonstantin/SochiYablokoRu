@@ -1,0 +1,151 @@
+.inv_list {
+    padding: 10px;
+}
+
+.inv_list_ul {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.inv_list_li {
+    display: block;
+    margin: 10px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.inv_list_li a {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.inv_list_header, .inv_list_img {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+}
+
+.inv_list_img {
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    float: right;
+}
+
+.inv_list_status {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(215, 18, 73);
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+}
+
+.inv_list_title {
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.inv_list_description {
+    display: inline-block;
+    padding: 5px;
+    min-height: 90px;
+    height: 100%;
+}
+
+.bases_list_ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.bases_list_ul li {
+    display: block;
+    flex: auto;
+    overflow: hidden;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.bases_list_li_1 a, .bases_list_li_2 a, .bases_list_li_3 a, .bases_list_li_4 a, .bases_list_li_5 a {
+    display: flex;
+}
+
+.bases_list_li_1 {
+    background: #dafd95;
+}
+
+.bases_list_li_2 {
+    background: #b8f416;
+}
+
+.bases_list_li_3 {
+    background: #65ae07;
+}
+
+.bases_list_li_4 {
+    background: #557d25;
+}
+
+.bases_list_li_5 {
+    background: #306400;
+}
+
+.bases_type {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.bases_type_end {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+}
+
+.bases_type_end::after {
+    font-family: 'Font Awesome 5 Free', serif;
+    content: '\f101';
+    font-weight: bold;
+}
+
+@media (max-width: 425px) {
+    .inv_list_header {
+        width: 100%;
+    }
+
+    .inv_list_status {
+        font-size: 0.9em;
+    }
+
+    .inv_list_img {
+        display: none;
+    }
+
+    .inv_list_description {
+        min-height: unset;
+        height: auto;
+    }
+
+    .bases_list_ul li:hover {
+        flex: 300px;
+    }
+
+    .bases_list_ul li:hover .bases_type {
+
+    }
+}

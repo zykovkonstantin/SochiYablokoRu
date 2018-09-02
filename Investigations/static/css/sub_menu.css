@@ -1,0 +1,45 @@
+.sub_menu {
+    display: block;
+    width: 100%;
+}
+
+.sub_menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub_menu li {
+    display: table-cell;
+    margin: 10px;
+    text-align: center;
+}
+
+.sub_menu a {
+    display: table-cell;
+    width: 180px;
+    height: 45px;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+@media (max-width: 425px) {
+    .sub_menu ul {
+        flex-direction: column;
+    }
+
+    .sub_menu li {
+        margin: 2px
+    }
+
+    .sub_menu a {
+        height: 25px;
+        width: 300px;
+    }
+}
