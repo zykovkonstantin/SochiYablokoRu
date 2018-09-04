@@ -1,10 +1,10 @@
 <div class="floating-social-bar">
 
     <a class="twitter-share sociallink"
-       href="https://twitter.com/intent/tweet?text=http%3A%2F%2Fsochi.yabloko.ru{{ request.get_full_path|urlencode:"" }}">Twitter</a>
+       href="https://twitter.com/intent/tweet?text={{ request.build_absolute_uri|urlencode }}">Twitter</a>
 
     <a class="facebook-share sociallink"
-       href="http://www.facebook.com/sharer/sharer.php?u=http://sochi.yabloko.ru{{ request.get_full_path|urlencode }}">Facebook</a>
+       href="http://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}">Facebook</a>
 <!--
 <a class="googleplus-share sociallink" href="#">Google+</a>
 -->
