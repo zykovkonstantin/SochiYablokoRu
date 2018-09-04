@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="fb:admins" content="zykovkb"/>
     <meta property="fb:admins" content="100000553815449"/>
+    <meta property="fb:app_id" content="262581791046633"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
+    <meta property="og:locale" content="ru_RU"/>
+    <meta name="twitter:card" content="summary">
     <title>
         {% block title %}
         {% endblock %}
@@ -26,7 +31,7 @@
     if (d.getElementById(id)) return;
     js = d.createElement(s);
     js.id = id;
-    js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1';
+    js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1&appId=262581791046633&autoLogAppEvents=1';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <header>
