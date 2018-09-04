@@ -33,6 +33,7 @@ urlpatterns = [
     path('projects/inv/<int:pk>', inv_views.investigations_detail, name='inv_detail'),
     path('contacts/', views.contacts, name='contacts'),
     path('summernote/', include('django_summernote.urls')),
+    path('privacy_policy/', views.privacy_policy, name='privacy_policy')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

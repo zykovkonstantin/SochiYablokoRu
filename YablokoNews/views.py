@@ -51,3 +51,7 @@ def adv_detail(request, pk):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
