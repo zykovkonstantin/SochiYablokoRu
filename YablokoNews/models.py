@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from SochiYablokoRu.settings import MEDIA_URL
 from UserProfiles.models import UserProfile
 
 News_Types = (
@@ -27,7 +28,7 @@ class News(models.Model):
 
     def author_img(self):
         image = UserProfile.objects.filter(user_id=self.author.id).values_list('avatar', flat=True)
-        return '%s' % (image[0])
+        return '%s%s' % (MEDIA_URL, image[0])
 
     def image_img(self):
         if self.image:

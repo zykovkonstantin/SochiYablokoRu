@@ -5,8 +5,13 @@
     <meta property="og:image" content="website"/>
     <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
     <meta property="og:title" content="{{ one_news.title }}"/>
-    <meta property="og:locate" content="ru_RU"/>
-    <meta property="og:image" content="{{ one_news.image.url }}"/>
+    <meta property="og:locale" content="ru_RU"/>
+    <meta property="og:image" content="http://{{ request.get_host }}{{ one_news.image.url }}"/>
+    <meta property="og:description" content="{{ one_news.text|truncatechars_html:200 }}"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ new.news_type }}">
+    <meta name="twitter:description" content="{{ one_news.title }}">
+    <meta name="twitter:image" content="http://{{ request.get_host }}{{ one_news.image.url }}">
     <link href="{% static 'css/news/news_detail.css' %}" rel="stylesheet">
 {% endblock %}
 
@@ -25,7 +30,7 @@
         <div class="news_detail_footer">
             <div class="news_detail_author">
                 <hr>
-                <img src="../media/{{ one_news.author_img }}">
+                <img src="{{ one_news.author_img }}">
                 <span>{{ one_news.author_name }}</span>
             </div>
             {% include 'news/social_share.html' %}
