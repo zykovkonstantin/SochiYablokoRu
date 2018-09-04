@@ -12,8 +12,15 @@ def index(request):
     return render(request, 'main_page.html', {'last_news': last_news, 'advertisings': advertisings})
 
 
-def news(request):
-    all_news_list = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+def news(request, type):
+    if type == 'news':
+        all_news_list = News.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    elif type == 'blog':
+        all_news_list = News.objects.filter(published_date__lte=timezone.now(), news_type='БЛОГ').order_by(
+            '-published_date')
+    elif type == 'publications':
+        all_news_list = News.objects.filter(published_date__lte=timezone.now(), news_type='ПУБЛИКАЦИЯ').order_by(
+            '-published_date')
     paginator = Paginator(object_list=all_news_list, per_page=20, orphans=3)
     page = request.GET.get('page')
     try:

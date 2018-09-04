@@ -1,3 +1,12 @@
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-news {
+    flex: 1 0 auto;
+}
+
 .news_block {
     display: inline-block;
     padding-right: 15px;
@@ -13,6 +22,35 @@
     position: relative;
     float: right;
     padding: 0 5px 0 5px;
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+}
+
+.step-links a {
+    font-family: 'Font Awesome 5 Free', serif;
+    padding: 0 5px 0;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.first_page_button::after {
+    content: '\f100';
+}
+
+.prev_page_button::after {
+    content: '\f104';
+}
+
+.next_page_button::after {
+    content: '\f105';
+}
+
+.last_page_button::after {
+    content: '\f101';
 }
 
 @media (max-width: 425px) {

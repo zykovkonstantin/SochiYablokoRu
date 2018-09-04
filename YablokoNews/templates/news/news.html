@@ -16,13 +16,16 @@
         <ul class="sub_menu_ul">
 
             <li>
-                <a href="">БЛОГ</a>
+                <a href="{% url 'news' type='blog' %}"
+                   {% if request.path == '/blog/' %}style="background: #728182"{% endif %}>БЛОГ</a>
             </li>
             <li>
-                <a href="" style="background: lightslategray">ВСЕ</a>
+                <a href="{% url 'news' type='news' %}"
+                   {% if request.path == '/news/' %}style="background: #728182"{% endif %}>ВСЕ</a>
             </li>
             <li>
-                <a href="">ПУБЛИКАЦИИ</a>
+                <a href="{% url 'news' type='publications' %}"
+                   {% if request.path == '/publications/' %}style="background: #728182"{% endif %}>ПУБЛИКАЦИИ</a>
             </li>
         </ul>
     </div>
@@ -46,21 +49,29 @@
                 {% endfor %}
             </ul>
         </div>
-
-        <div class="pagination">
+    </div>
+    <div class="pagination">
     <span class="step-links">
         {% if all_news.has_previous %}
-            <a href="?page={{ all_news.previous_page_number }}">Предыдущая</a>
+            <a href="?page={{ all_news.first_page }}" class="first_page_button"></a>
+            <a href="?page={{ all_news.previous_page_number }}" class="prev_page_button">Предыдущая</a>
         {% endif %}
 
-        <span class="current">
+        <span class="current"
+                {% if all_news.paginator.num_pages == 1 %}
+              style="display: none"
+                {% else %}
+              style="display: unset"
+                {% endif %}
+        >
             Страница {{ all_news.number }} из {{ all_news.paginator.num_pages }}.
         </span>
 
         {% if all_news.has_next %}
-            <a href="?page={{ all_news.next_page_number }}">Следующая</a>
+            <a href="?page={{ all_news.next_page_number }}" class="next_page_button"></a>
+            <a href="?page={{ all_news.paginator.num_pages }}" class="last_page_button"></a>
         {% endif %}
+
     </span>
-        </div>
     </div>
 {% endblock %}

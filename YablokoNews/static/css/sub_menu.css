@@ -20,13 +20,17 @@
     display: table-cell;
     width: 180px;
     height: 45px;
-    color: black;
+    color: white;
     font-weight: bold;
     letter-spacing: 2px;
     padding: 5px;
-    background: #f0f0f0;
-    border-radius: 10px;
+    background: #b8c6c7;
     vertical-align: middle;
+    transition: 0.2s all linear;
+}
+
+.sub_menu a:hover {
+    background: #728182;
 }
 
 @media (max-width: 425px) {
@@ -41,5 +45,6 @@
     .sub_menu a {
         height: 25px;
         width: 300px;
+        font-size: 0.8em;
     }
 }

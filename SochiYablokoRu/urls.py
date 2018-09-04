@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include(urls)),
     path('', views.index, name='index'),
-    path('news/', views.news, name='news'),
+    path('<str:type>/', views.news, name='news'),
     path('news/add/', views.news_add, name='news_add'),
     path('news/<int:pk>', views.news_detail, name='news_detail'),
     path('adv/<int:pk>', views.adv_detail, name='adv_detail'),

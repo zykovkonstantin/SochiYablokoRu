@@ -67,7 +67,7 @@
         </div>
         <div class="main-menu">
             <ul>
-                <li><a href="{% url 'news' %}">НОВОСТИ</a></li>
+                <li><a href="{% url 'news' type='news' %}">НОВОСТИ</a></li>
                 <li><a href="{% url 'projects' %}">ПРОЕКТЫ</a></li>
                 <li><a href="{% url 'contacts' %}">КОНТАКТЫ</a></li>
                 {#                <li><a href="/">ПОДДЕРЖАТЬ</a></li>#}
@@ -85,7 +85,7 @@
             <span class="button button-toggle"></span>
         </label>
         <nav class="nav">
-            <a class="nav-item" href="{% url 'news' %}">НОВОСТИ</a>
+            <a class="nav-item" href="{% url 'news' type='news' %}">НОВОСТИ</a>
             <a class="nav-item" href="{% url 'projects' %}">ПРОЕКТЫ</a>
             <a class="nav-item" href="{% url 'contacts' %}">КОНТАКТЫ</a>
             {#            <a class="nav-item" href="">ПОДДЕРЖАТЬ</a>#}

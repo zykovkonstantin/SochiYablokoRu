@@ -70,11 +70,10 @@
 
 .bases_list_ul li {
     display: block;
-    flex: auto;
+    flex: 1;
     overflow: hidden;
     padding: 5px;
     margin: 5px;
-    border-radius: 10px;
     transition: all 0.3s ease;
 }
 
@@ -142,10 +141,15 @@
     }
 
     .bases_list_ul li:hover {
-        flex: 300px;
+        flex: 5;
     }
 
-    .bases_list_ul li:hover .bases_type {
-
+    .inv_list a {
+        pointer-events: none;
     }
+
+    .bases_list_ul li:hover a {
+        pointer-events: unset;
+    }
+
 }
