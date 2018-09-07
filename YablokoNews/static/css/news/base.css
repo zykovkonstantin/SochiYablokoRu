@@ -21,6 +21,12 @@ ul {
     -webkit-padding-start: 0;
 }
 
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+}
+
 .container {
     width: 100%;
 }
@@ -124,6 +130,9 @@ ul {
 
 /* Адаптируем дизайн под разрешение 480px */
 @media (max-width: 425px ) {
+    h1 {
+        display: none;
+    }
     .slim-container {
         display: block;
     }

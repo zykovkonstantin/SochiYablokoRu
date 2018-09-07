@@ -12,12 +12,18 @@
 {% endblock %}
 
 {% block sub-menu %}
+    {% if request.path == '/news/' %}
+        <h1>Все новости</h1>
+    {% elif request.path == '/blog/' %}
+        <h1>Блоги</h1>
+    {% elif request.path == '/publications/' %}
+        <h1>Публикации</h1>
+    {% endif %}
     <div class="sub_menu">
         <ul class="sub_menu_ul">
-
             <li>
                 <a href="{% url 'news' type='blog' %}"
-                   {% if request.path == '/blog/' %}style="background: #728182"{% endif %}>БЛОГ</a>
+                   {% if request.path == '/blog/' %}style="background: #728182"{% endif %}>БЛОГИ</a>
             </li>
             <li>
                 <a href="{% url 'news' type='news' %}"

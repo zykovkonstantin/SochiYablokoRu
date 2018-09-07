@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nxcm8_kah^w=tmec1sf5deh&j)10$25c$y(f_-4lq2lo8lngkt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'messknight.pythonanywhere.com', 'sochi.yabloko.ru', '185.16.41.226']
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'YablokoNews',
     'UserProfiles',
     'Investigations',
+    'Feedbacks',
 ]
 
 MIDDLEWARE = [
@@ -75,16 +76,26 @@ WSGI_APPLICATION = 'SochiYablokoRu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+if DEBUG == True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            # 'ENGINE': 'django.db.backends.mysql',
+            # 'OPTIONS': {
+            #    'read_default_file': '/etc/mysql/my.cnf',
+            # },
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'OPTIONS': {
+                'read_default_file': '/etc/mysql/my.cnf',
+            },
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
