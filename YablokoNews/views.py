@@ -56,9 +56,5 @@ def adv_detail(request, pk):
     return render(request, 'news/news_detail.html', {'one_news': adv, 'last_news': last_news})
 
 
-def contacts(request):
-    return render(request, 'contacts.html')
-
-
 def privacy_policy(request):
     return render(request, 'privacy_policy.html')
