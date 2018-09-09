@@ -38,3 +38,19 @@ def get_status(status):
         return status_list[4]
     elif status == '6':
         return status_list[5]
+
+
+@register.filter(name='get_type')
+def get_type(type):
+    type_list = ('ИНФОРМАЦИЯ', 'ЖАЛОБА', 'ЗАПРОС', 'ОТВЕТ', 'ИТОГИ')
+
+    if type == '1':
+        return type_list[0]
+    elif type == '2':
+        return type_list[1]
+    elif type == '3':
+        return type_list[2]
+    elif type == '4' or type == '5':
+        return type_list[3]
+    elif type == '6':
+        return type_list[4]

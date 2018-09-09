@@ -73,32 +73,20 @@
     flex: 1;
     overflow: hidden;
     padding: 5px;
-    margin: 5px;
     transition: all 0.3s ease;
 }
 
-.bases_list_li_1 a, .bases_list_li_2 a, .bases_list_li_3 a, .bases_list_li_4 a, .bases_list_li_5 a {
+.bases_list_li a{
     display: flex;
+    background: #b8c6c7;
+    transition: 0.2s all linear;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
 }
 
-.bases_list_li_1 {
-    background: #dafd95;
-}
-
-.bases_list_li_2 {
-    background: #b8f416;
-}
-
-.bases_list_li_3 {
-    background: #65ae07;
-}
-
-.bases_list_li_4 {
-    background: #557d25;
-}
-
-.bases_list_li_5 {
-    background: #306400;
+.bases_list_li a:hover{
+    background: #728182;
 }
 
 .bases_type {
@@ -113,13 +101,21 @@
 .bases_type_end {
     position: absolute;
     display: inline-block;
-    right: 0;
+    right: 5px;
 }
 
 .bases_type_end::after {
     font-family: 'Font Awesome 5 Free', serif;
     content: '\f101';
     font-weight: bold;
+}
+
+.slim_bases_list {
+    display: none;
+}
+
+.slim_bases_list_title {
+    display: none;
 }
 
 @media (max-width: 425px) {
@@ -140,16 +136,87 @@
         height: auto;
     }
 
-    .bases_list_ul li:hover {
+    .bases_list_ul {
+        display: none;
+    }
+
+    .slim_bases_list {
+        display: flex;
+        flex-direction: row;
+        width: 100%
+    }
+
+    .slim_bases_list_title {
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: rgba(74, 161, 71, 100);
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .slim_bases_list label{
+        flex: 1;
+        display: inline-block;
+        position:relative;
+        background: #b8c6c7;
+        transition: 0.3s all linear;
+        color: white;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .slim_bases_list a {
+        display:unset;
+        width: unset;
+        position: unset;
+    }
+
+    .slim_bases_list a::after {
+        display: none;
+    }
+
+    .toogle_li {
+        display: none;
+    }
+
+    input:checked + label {
         flex: 5;
+        background: #728182;
     }
 
-    .inv_list a {
-        pointer-events: none;
+    input:checked + label a::after {
+        display: inline-block;
+        position: absolute;
+        content: ' ';
+        width: 100%;
+        height: 26px;
+        top: 0;
+        right: 0;
     }
 
-    .bases_list_ul li:hover a {
-        pointer-events: unset;
+    .slim_bases_type {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 12px;
+        width: 100%;
     }
 
+    .slim_bases_type_end {
+        position: absolute;
+        display: inline-block;
+        right: 2px;
+        top: 5px;
+    }
+
+    .slim_bases_type_end::after {
+        font-family: 'Font Awesome 5 Free', serif;
+        content: '\f101';
+        font-weight: bold;
+    }
 }

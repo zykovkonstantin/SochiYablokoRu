@@ -33,6 +33,7 @@ urlpatterns = [
     path('adv/<int:pk>', news_views.adv_detail, name='adv_detail'),
     path('projects/inv/', inv_views.investigations, name='projects'),
     path('projects/inv/<int:pk>', inv_views.investigations_detail, name='inv_detail'),
+    path('projects/inv/<int:inv_pk>/<int:base_pk>', inv_views.base_inv_detail, name='base_inv_detail'),
     path('summernote/', include('django_summernote.urls')),
     path('privacy_policy/', news_views.privacy_policy, name='privacy_policy')
 ]

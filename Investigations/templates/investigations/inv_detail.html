@@ -1,13 +1,66 @@
 {% extends 'base.html' %}
+{% load extra_scripts %}
+{% load static %}
+
+{% block link %}
+<meta property="og:title" content="{{ inv.title }}"/>
+<meta property="og:image" content="http://{{ request.get_host }}{{ inv.image.url }}"/>
+<meta property="og:description" content="{{ inv.text|truncatechars_html:200|striptags  }}"/>
+<meta name="twitter:title" content="{{ inv.title }}">
+<meta name="twitter:description" content="{{ inv.text|truncatechars_html:200|striptags }}">
+<meta name="twitter:image" content="http://{{ request.get_host }}{{ inv.image.url }}">
+<link href="{% static 'css/news/news_detail.css' %}" rel="stylesheet">
+<link href="{% static 'css/inv/inv_list.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Расследование . Яблоко в Сочи
+{% endblock %}
 
 {% block content %}
+
+<div class="news_detail_block">
+    <div class="news_detail_header">
+        <div class="news_detail_date">{{ inv.published_date }}</div>
+        <div class="news_detail_type">{{ inv.status|get_status }}</div>
+        <div class="news_detail_title">{{ inv.title }}</div>
+        {% include 'news/social_share.html' %}
+    </div>
+    <div class="news_detail_text">{{ inv.text|safe }}</div>
+    <div class="slim_bases_list_title">ЭТАПЫ РАССЛЕДОВАНИЯ</div>
+    <div class="slim_bases_list">
+        {% for base in inv|bases_list %}
+
+        <input id="toogle_li_{{ inv.pk }}_{{ base.pk }}" name="toogle_li" type="radio" class="toogle_li">
+        <label for="toogle_li_{{ inv.pk }}_{{ base.pk }}">
+            <div class="slim_bases_type">{{ base.type|get_type }}</div>
+            <div class="slim_bases_type_end"></div>
+            <a href="{% url 'base_inv_detail' inv_pk=inv.pk base_pk=base.pk %}"></a>
+        </label>
+        {% endfor %}
+    </div>
+    <div class="news_detail_footer">
+        {% include 'news/social_share.html' %}
+    </div>
+
+    <div class="fb-comments" data-href="{{ request.build_absolute_uri }}"
+         data-width="100%" data-numposts="5"></div>
+</div>
+
+<div class="left_news_block">
+    <div class="left_news_block_title">ЭТАПЫ РАССЛЕДОВАНИЯ</div>
     <ul>
         {% for base in basesforinv %}
-            <li>
-                {{ base.title }}<br>
-                {{ base.published_date }}<br>
-                {{ base.text|safe }}<br>
-            </li>
+        <li>
+            <a href="{% url 'base_inv_detail' inv_pk=inv.pk base_pk=base.pk %}">
+                <div class="left_news_block_type">{{ base.type|get_type }}</div>
+                <div class="left_news_block_text">{{ base.title }}</div>
+                <div class="left_news_block_date">{{ base.published_date }}</div>
+            </a>
+        </li>
+        {% empty %}
+        <div class="left_news_block_text" style="text-align: center">Здесь пока ничего нет</div>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load extra_scripts %}
+{% load static %}
+
+{% block link %}
+<meta property="og:title" content="{{ base.title }}"/>
+<meta property="og:image" content="http://{{ request.get_host }}{{ base.image.url }}"/>
+<meta property="og:description" content="{{ base.text|truncatechars_html:200|striptags  }}"/>
+<meta name="twitter:title" content="{{ base.title }}">
+<meta name="twitter:description" content="{{ base.text|truncatechars_html:200|striptags }}">
+<meta name="twitter:image" content="http://{{ request.get_host }}{{ base.image.url }}">
+<link href="{% static 'css/news/news_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+Расследование . Яблоко в Сочи
+{% endblock %}
+
+{% block content %}
+
+<div class="news_detail_block">
+    <div class="news_detail_header">
+        <div class="news_detail_date">{{ base.published_date }}</div>
+        <dev class="news_detail_type">{{ base.type|get_type }}</dev>
+        <div class="news_detail_title">{{ base.title }}</div>
+        {% include 'news/social_share.html' %}
+    </div>
+    <div class="news_detail_text">{{ base.text|safe }}</div>
+    <div class="news_detail_footer">
+        {% include 'news/social_share.html' %}
+    </div>
+    <div class="fb-comments" data-href="{{ request.build_absolute_uri }}"
+         data-width="100%" data-numposts="5"></div>
+</div>
+
+<div class="left_news_block">
+    <div class="left_news_block_title">ЭТАПЫ РАССЛЕДОВАНИЯ</div>
+    <ul>
+        {% for base in all_bases %}
+        <li>
+            <a href="">
+                <div class="left_news_block_type">{{ base.type }}</div>
+                <div class="left_news_block_text">{{ base.title }}</div>
+                <div class="left_news_block_date">{{ base.published_date }}</div>
+            </a>
+        </li>
+        {% empty %}
+            <div class="left_news_block_text" style="text-align: center">Здесь пока ничего нет</div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
