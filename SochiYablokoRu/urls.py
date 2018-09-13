@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import urls
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from YablokoNews.views import index, news, news_add, news_detail, adv_detail, privacy_policy
 from Investigations.views import investigations, investigations_detail, base_inv_detail
@@ -35,7 +36,8 @@ urlpatterns = [
     path('projects/inv/<int:pk>', investigations_detail, name='inv_detail'),
     path('projects/inv/<int:inv_pk>/<int:base_pk>', base_inv_detail, name='base_inv_detail'),
     path('summernote/', include('django_summernote.urls')),
-    path('privacy_policy/', privacy_policy, name='privacy_policy')
+    path('privacy_policy/', privacy_policy, name='privacy_policy'),
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
