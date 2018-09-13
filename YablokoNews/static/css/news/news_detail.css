@@ -6,6 +6,7 @@
     position: relative;
     float: left;
 }
+
 .news_detail_header {
     text-align: center;
 }
@@ -127,6 +128,5 @@
     .news_detail_title {
         font-size: 2em;
     }
-
 
 }

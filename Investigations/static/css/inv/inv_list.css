@@ -76,7 +76,7 @@
     transition: all 0.3s ease;
 }
 
-.bases_list_li a{
+.bases_list_li a {
     display: flex;
     background: #b8c6c7;
     transition: 0.2s all linear;
@@ -85,7 +85,7 @@
     font-weight: bold;
 }
 
-.bases_list_li a:hover{
+.bases_list_li a:hover {
     background: #728182;
 }
 
@@ -143,7 +143,7 @@
     .slim_bases_list {
         display: flex;
         flex-direction: row;
-        width: 100%
+        width: 100%;
     }
 
     .slim_bases_list_title {
@@ -157,7 +157,7 @@
         padding: 10px 0;
     }
 
-    .slim_bases_list label{
+    .slim_bases_list label {
         flex: 1;
         display: inline-block;
         position:relative;
@@ -171,7 +171,7 @@
     }
 
     .slim_bases_list a {
-        display:unset;
+        display: unset;
         width: unset;
         position: unset;
     }

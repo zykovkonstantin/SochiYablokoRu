@@ -41,16 +41,16 @@ def get_status(status):
 
 
 @register.filter(name='get_type')
-def get_type(type):
+def get_type(base_type):
     type_list = ('ИНФОРМАЦИЯ', 'ЖАЛОБА', 'ЗАПРОС', 'ОТВЕТ', 'ИТОГИ')
 
-    if type == '1':
+    if base_type == '1':
         return type_list[0]
-    elif type == '2':
+    elif base_type == '2':
         return type_list[1]
-    elif type == '3':
+    elif base_type == '3':
         return type_list[2]
-    elif type == '4' or type == '5':
+    elif base_type == '4' or base_type == '5':
         return type_list[3]
-    elif type == '6':
+    elif base_type == '6':
         return type_list[4]
