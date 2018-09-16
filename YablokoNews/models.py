@@ -44,6 +44,9 @@ class News(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    def get_absolute_url(self):
+        return "/news/%i" % self.pk
+
     def __str__(self):
         return self.title
 
@@ -61,6 +64,9 @@ class Advertising(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+
+    def get_absolute_url(self):
+        return "/adv/%i" % self.pk
 
     def __str__(self):
         return self.title

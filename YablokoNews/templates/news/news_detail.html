@@ -23,11 +23,13 @@
             {% include 'news/social_share.html' %}
         </div>
         <div class="news_detail_text">{{ one_news.text|safe }}</div>
+        <hr>
         <div class="news_detail_footer">
             <div class="news_detail_author">
-                <hr>
-                <img src="{{ one_news.author_img }}">
-                <span>{{ one_news.author_name }}</span>
+                <span class="news_detail_author_block">
+                    <img src="{{ one_news.author_img }}">
+                    <span class="news_detail_author_text">{{ one_news.author_name }}</span>
+                </span>
             </div>
             {% include 'news/social_share.html' %}
         </div>

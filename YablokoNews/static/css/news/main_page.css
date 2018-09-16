@@ -61,7 +61,6 @@ slider {
     padding-right: 5px;
     text-align: right;
     margin: 0;
-    background: #f0f0f0;
 }
 
 .last-news-block li {
@@ -81,15 +80,12 @@ slider {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    transition: 0.2s all linear;
 }
 
 .last-news-block a:hover {
-    color: black;
-    position: relative;
-    bottom: 5px;
-    right: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    background-color: #b8c6c7;
 }
 
 .last-news-block img {

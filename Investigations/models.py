@@ -29,6 +29,9 @@ class Investigation(models.Model):
     text = models.TextField(null=True)
     image = models.ImageField(upload_to='investigations/%Y/%m/%d', verbose_name='Изображение', default='default.jpg')
 
+    def get_absolute_url(self):
+        return '/project/inv/%i' % self.pk
+
     def __str__(self):
         return self.title
 
@@ -44,6 +47,9 @@ class BaseForInvestigation(models.Model):
     type = models.CharField(max_length=50, choices=basetypes_list, default=basetypes_list[0][1])
     text = models.TextField()
     published_date = models.DateField(default=timezone.now)
+
+    def get_absolute_url(self):
+        return '/project/inv/%i/%i' % (self.investigation.pk, self.pk)
 
     def __str__(self):
         return self.title

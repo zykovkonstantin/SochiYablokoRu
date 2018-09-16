@@ -9,7 +9,11 @@
 
 @media (max-width: 425px){
     .contacts_block {
-        margin: 0;
+        margin: 0 5px 0 5px;
+    }
+
+    .contacts_block p {
+        font-size: 1em;
     }
 
     h1{

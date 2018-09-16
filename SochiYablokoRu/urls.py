@@ -18,10 +18,21 @@ from django.contrib.auth import urls
 from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from YablokoNews.views import index, news, news_add, news_detail, adv_detail, privacy_policy
+from YablokoNews.sitemap import NewsSitemap, AdvSitemap
 from Investigations.views import investigations, investigations_detail, base_inv_detail
+from Investigations.sitemap import InvSitemap, BaseInvSitemap
 from Feedbacks.views import contacts
+from Feedbacks.sitemap import ContactsSitemap
 from django.conf import settings
 from django.conf.urls.static import static
+
+sitemaps = {
+    'news': NewsSitemap(),
+    'adv': AdvSitemap(),
+    'contscts': ContactsSitemap(),
+    'inv': InvSitemap(),
+    'baseinv': BaseInvSitemap(),
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,7 +48,7 @@ urlpatterns = [
     path('projects/inv/<int:inv_pk>/<int:base_pk>', base_inv_detail, name='base_inv_detail'),
     path('summernote/', include('django_summernote.urls')),
     path('privacy_policy/', privacy_policy, name='privacy_policy'),
-    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
