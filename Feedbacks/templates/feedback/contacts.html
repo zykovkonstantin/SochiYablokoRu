@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block link %}
-    <link href="{% static 'css/contacts.css' %}" rel="stylesheet">
-{% endblock %}
-
 {% block title %}
     Контакты . Яблоко в Сочи
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="Контакты регионального отделения политической партии «Яблоко» в городе Сочи"/>
+{% endblock %}
+
+{% block link %}
+    <link href="{% static 'css/contacts.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}

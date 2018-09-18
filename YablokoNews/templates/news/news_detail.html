@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+    {{ one_news.title }}
+{% endblock %}
+
+{% block description %}
+    <meta name="description" content="{{ one_news.text|truncatechars_html:200|striptags  }}"/>
+{% endblock %}
+
 {% block link %}
     <meta property="og:title" content="{{ one_news.title }}"/>
     <meta property="og:image" content="http://{{ request.get_host }}{{ one_news.image.url }}"/>
@@ -9,10 +17,6 @@
     <meta name="twitter:description" content="{{ one_news.title }}">
     <meta name="twitter:image" content="http://{{ request.get_host }}{{ one_news.image.url }}">
     <link href="{% static 'css/news/news_detail.css' %}" rel="stylesheet">
-{% endblock %}
-
-{% block title %}
-    Новости . Яблоко в Сочи
 {% endblock %}
 
 {% block content %}

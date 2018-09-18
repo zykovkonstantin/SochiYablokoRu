@@ -2,13 +2,17 @@
 {% load static %}
 <html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="сочи, sochi, новости, news, политика, расследования, коррупция">
-    <meta name="description"
-          content="Новостной сайт регионального отделения политической партии «Яблоко» в городе Сочи">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% block description %}
+    {% endblock %}
+    <meta name="keywords" content="сочи, sochi, новости, news, политика, расследования, коррупция, митинг, митинг в сочи"/>
     <meta name="google-site-verification" content="x272oq7cY8xzCiQbRRjBuv8g5O7sFiTi4Mzj5xpCNKE"/>
     <meta name="yandex-verification" content="cf0711649f5f4635"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta property="fb:admins" content="zykovkb"/>
     <meta property="fb:admins" content="100000553815449"/>
     <meta property="fb:app_id" content="262581791046633"/>
@@ -16,10 +20,7 @@
     <meta property="og:url" content="{{ request.build_absolute_uri }}"/>
     <meta property="og:locale" content="ru_RU"/>
     <meta name="twitter:card" content="summary">
-    <title>
-        {% block title %}
-        {% endblock %}
-    </title>
+
     {% block link %}
     {% endblock %}
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon"/>
@@ -117,5 +118,40 @@
         </div>
     </div>
 </footer>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter50393311 = new Ya.Metrika2({
+                    id: 50393311,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true
+                });
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/50393311" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>
