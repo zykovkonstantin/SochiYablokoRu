@@ -8,7 +8,7 @@ class NewsModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     list_display = ('news_type', 'title', 'published_date', 'author', 'image', 'image_img')
     list_filter = ['news_type', 'author']
     readonly_fields = ['image_img', ]
-    fields = ['author', 'title', 'text', 'published_date', 'image', 'image_img']
+    fields = ['author', 'news_type', 'title', 'text', 'published_date', 'image', 'image_img']
 
 
 class AdvModelAdmin(SummernoteModelAdmin):
