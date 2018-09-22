@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'SochiYablokoRu.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-if DEBUG == True:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -89,7 +89,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'OPTIONS': {
-                'read_default_file': '/etc/mysql/my.cnf',
+                'read_default_file': '/home/kb.zykov/my.cnf',
             },
         }
     }
